@@ -1,4 +1,4 @@
-module github.com/hairyhenderson/hitron_coda
+module github.com/jadbsaid/hitron_coda
 
 go 1.19
 
