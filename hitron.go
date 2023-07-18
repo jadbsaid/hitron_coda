@@ -128,6 +128,10 @@ func (c *CableModem) getJSON(ctx context.Context, path string, o interface{}) er
 	return c.sendRequest(ctx, http.MethodGet, path, http.NoBody, o)
 }
 
+func (c *CableModem) postJSON(ctx context.Context, path string, body, o interface{}) error {
+	return c.sendRequest(ctx, http.MethodPost, path, body, o)
+}
+
 func (c *CableModem) sendRequest(ctx context.Context, method, path string, body, o interface{}) error {
 	ctx, cancel := context.WithCancel(ctx)
 	defer cancel()
