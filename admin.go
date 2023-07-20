@@ -75,7 +75,7 @@ func (c *CableModem) SelfInstall(ctx context.Context) (*Error, error) {
 	err := c.sendRequest(ctx, http.MethodPost, "/SelfInstall",
 		url.Values{
 			"model": []string{fmt.Sprintf(`{"name":"%s","password":"%s"}`, c.credentials.Username, c.credentials.Password)},
-		}, o)
+		}, &o)
 	if err != nil {
 		return nil, err
 	}
