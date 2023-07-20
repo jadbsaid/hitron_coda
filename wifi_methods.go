@@ -13,3 +13,10 @@ func (c *CableModem) WiFiRadioDetails(ctx context.Context, radio int) (out WiFiR
 
 	return out, err
 }
+
+// WiFiRadioAdvancedDetails - get details from /WiFi/Radios/<n>/Advanced
+func (c *CableModem) WiFiRadioAdvancedDetails(ctx context.Context, radio int) (out WiFiRadioAdvanced, err error) {
+	err = c.getJSON(ctx, "/WiFi/Radios/"+strconv.Itoa(radio)+"/Advanced", &out)
+
+	return out, err
+}

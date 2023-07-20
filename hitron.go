@@ -128,7 +128,7 @@ func (c *CableModem) getJSON(ctx context.Context, path string, o interface{}) er
 	return c.sendRequest(ctx, http.MethodGet, path, http.NoBody, o)
 }
 
-func (c *CableModem) postJSON(ctx context.Context, path string, body, o interface{}) error {
+func (c *CableModem) PostJSON(ctx context.Context, path string, body, o interface{}) error {
 	return c.sendRequest(ctx, http.MethodPost, path, body, o)
 }
 
